@@ -1,0 +1,157 @@
+<div class="container py-3">
+  <div class="row">
+    <div class="mx-auto col-sm-8">
+      <!-- form user info -->
+      <div class="card card-background">
+        <div class="card-header card-background-header shadow p-3 mb-5 bg-white rounded ">
+          <h4 class="mb-0" *ngIf="!editForm">Create New Comic:</h4>
+          <h4 class="mb-0" *ngIf="editForm">Edit New Comic:</h4>
+
+        </div>
+        <div class="card-body">
+          <div class="container">
+            <div class="form-group">
+
+              <form
+                [formGroup]="comicForm"
+                (ngSubmit)="onSubmit(comicForm)">
+                <div class="form-group row">
+                  <label for="name"
+                         class="col-lg-3 col-form-label form-control-label">Name:</label>
+                  <div class="col-lg-9">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      formControlName="name"
+                    >
+                    <span *ngIf="!comicForm.get('name').valid && comicForm.get('name').touched"
+                          class="form-text text-muted">
+                       <span *ngIf="comicForm.get('name').errors['required']">This field is required!<br></span>
+                       <span *ngIf="!comicForm.get('name').errors['minLength']">This field is needs to be min 10 character!</span>
+
+                  </span>
+                  </div>
+
+                </div>
+                <div class="form-group row">
+                  <label for="coverImgUrl" class="col-lg-3 col-form-label form-control-label">Cover Image url:</label>
+                  <div class="col-lg-9">
+                    <input
+                      type="url"
+                      class="form-control"
+                      id="coverImgUrl"
+                      formControlName="coverImgUrl"
+                    >
+                    <span *ngIf="!comicForm.get('coverImgUrl').valid && comicForm.get('coverImgUrl').touched"
+                          class="form-text text-muted">
+                       <span *ngIf="comicForm.get('coverImgUrl').errors['required']">This field is required!<br></span>
+                       <span
+                         *ngIf="comicForm.get('coverImgUrl').errors['pattern']">This field is needs to be a Link!</span>
+
+                  </span>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <label for="Date" class="col-lg-3 col-form-label form-control-label">Date:</label>
+                  <div class="col-lg-9 d-flex">
+                    <input
+                      [matDatepicker]="myDatepicker"
+                      id="Date"
+                      formControlName="publicationDate"
+                      class="form-control"
+                    >
+                    <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #myDatepicker></mat-datepicker>
+                    <span *ngIf="!comicForm.get('publicationDate').valid && comicForm.get('publicationDate').touched"
+                          class="help-block">
+                      <span *ngIf="comicForm.get('publicationDate').errors['required']">This field is required!</span>
+                    </span>
+                  </div>
+                </div>
+                <ng-template #footerTemplate>
+                  <hr class="my-0">
+                  <button class="btn btn-primary btn-sm m-2 float-left" (click)="model = today; d.close()">Today
+                  </button>
+                  <button class="btn btn-secondary btn-sm m-2 float-right" (click)="d.close()">Close</button>
+                </ng-template>
+                <div class="form-group row">
+                  <label for="Genre" class="col-lg-3 col-form-label form-control-label">Genre:</label>
+                  <div class="col-lg-9">
+                    <input
+                      type="text"
+                      id="Genre"
+                      formControlName="genre"
+                      class="form-control"
+                    >
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="excerpt" class="col-lg-3 col-form-label form-control-label">Description</label>
+                  <div class="col-lg-9">
+      <textarea
+        type="text"
+        rows="5"
+        id="excerpt"
+        class="form-control"
+        formControlName="excerpt">
+            </textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="publisher" class="col-lg-3 col-form-label form-control-label">Publisher</label>
+                  <div class="col-lg-9">
+                    <select
+                      class="form-control"
+                      id="publisher"
+                      formControlName="publisher"
+                      name="publish"
+                    >
+                      <option *ngFor="let publish of publisher" [value]="publish">{{publish}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="writtenBy" class="col-lg-3 col-form-label form-control-label">
+                    Written By:
+                  </label>
+                  <div class="col-lg-9">
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="writtenBy"
+                      formControlName="writtenBy"
+                    >
+                    <span *ngIf="!comicForm.get('writtenBy').valid && comicForm.get('writtenBy').touched"
+                          class="help-block">
+                          <span *ngIf="comicForm.get('writtenBy').errors['required']">This field is required!</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="flex-md-fill">
+                  <div class="d-flex justify-content-between">
+
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      [disabled]="!comicForm.valid"
+                    >Submit
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-danger"
+                      (click)="onDelete(comicForm)"
+                      *ngIf="editForm"
+                    >Delete
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

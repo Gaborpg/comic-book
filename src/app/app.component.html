@@ -1,0 +1,61 @@
+<!--Hi Laci,
+
+
+Your friend asks you to help him to build a simple web application where he can track his
+old comic books. You have to allow him to create, update, delete and list comic books in a table (with pagination).
+ The following criteria have to be fulfilled:
+- You have to create a frontend application using Angular 4 framework.D
+- To make it a nice-looking web page you must use Twitter's bootstrap.D
+- The list, create, edit pages has to be implemented on a standalone page (using routes).D
+- The table has to allow pagination and sorting on every property.D
+- The application has to use a service in which all the data is stored in the memory (array of comic books). Save,
+ update and delete actions must do their job on this array.
+- The table has to be sorted by any property of the comic book.D
+- The validation errors have to be displayed to the user, when he tries to save an invalid comic book and save must
+ not be permitted.
+- You can use any additional library which can help your work.
+
+A comic book has the following attributes:
+
+Id (number which represents a unique identifier in the database -  it can be random generated)
+Name (required, max-length: 255 characters, minimum length: 10 characters)
+Cover image url (required, must be a valid url)
+Publication date (Date type must be used, datepicker ui element must be used, required)
+Genre
+Excerpt (textarea ui element must be used)
+Written by (multi choice drop down element must be used, required)
+Publisher (drop down element must be used)
+
+When you finished you need to create a github repository for the project and push everything there. Finally you should
+send us the link of this repo.
+
+
+If you have any questions feel free to ask.
+-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">
+    <img src="https://i.pinimg.com/originals/2c/eb/b2/2cebb2634e2dee23f30e031b60268a4c.png" alt="logo"
+         style="width:40px;">
+  </a>
+  <ul class="navbar-nav">
+    <li
+      routerLinkActive="active"
+      class="nav-item">
+      <a
+        routerLink="create"
+        class="nav-link">
+        Create
+      </a>
+    </li>
+    <li
+      routerLinkActive="active"
+      class="nav-item">
+      <a
+        routerLink="list-table"
+        class="nav-link">
+        List-table
+      </a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
