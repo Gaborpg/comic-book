@@ -7,7 +7,14 @@ import {CreateComponent} from './create/create.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatTableModule, MatPaginatorModule, MatSortModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import {
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatTooltipModule
+} from '@angular/material';
 import {ListTableComponent} from './list-table/list-table.component';
 import {ShortenPipe} from './shorten.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -31,7 +38,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatSortModule,
     NgbModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

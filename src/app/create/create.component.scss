@@ -1,11 +1,13 @@
 .card-background {
   background-color: rgba(255, 255, 255, 0.8) !important;
+
+  &-header {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    color: white;
+  }
 }
 
-.card-background-header {
-  background-color: rgba(0, 0, 0, 0.95) !important;
-  color: White;
-}
+
 
 input.ng-invalid.ng-touched {
   border-left: 4px solid red;

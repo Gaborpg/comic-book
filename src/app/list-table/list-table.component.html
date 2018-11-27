@@ -32,7 +32,9 @@
 
         <ng-container matColumnDef="excerpt">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Bio</th>
-          <td mat-cell *matCellDef="let row">{{row.excerpt | shorten}}</td>
+          <td mat-cell *matCellDef="let row"
+              matTooltip={{row.excerpt}}>
+          {{row.excerpt | shorten}}</td>
         </ng-container>
 
         <ng-container matColumnDef="writtenBy">

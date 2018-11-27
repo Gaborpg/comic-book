@@ -1,8 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
 import {ListTableItem} from '../list-table/list-table-datasource';
-import {Comicbook} from '../comicbook';
 import {FormGroup} from '@angular/forms';
-import {NgbDate} from '@ng-bootstrap/ng-bootstrap';
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +23,7 @@ export class ComicService implements OnInit {
       coverImgUrl: 'https://vignette.wikia.nocookie.net/marveldatabase/images/0/06/Iron_Man_Armor_Model_37.jpg/revision/latest?cb=20170122060858',
       publicationDate: new Date(1941, 12, 17),
       genre: 'Superhero',
-      excerpt: `Anthony Edward Stark, the son of wealthy industrialist and head of Stark Industries,
-         Howard Stark, and Maria Stark. A boy genius, he enters MIT at the age of 15 to study electrical
-         engineering and later receives master's degrees in electrical engineering and physics.
-         After his parents are killed in a car accident, he inherits his father's company.`,
+      excerpt: `Anthony Edward Stark, the son of wealthy industrialist and head of Stark Industries,Howard Stark, and Maria Stark. A boy genius, he enters MIT at the age of 15 to study electrical engineering and later receives master's degrees in electrical engineering and physics. After his parents are killed in a car accident, he inherits his father's company.`,
       writtenBy: 'Stan Lee',
       publisher: 'Marvel Comics'
     },
@@ -38,15 +33,7 @@ export class ComicService implements OnInit {
       coverImgUrl: 'https://upload.wikimedia.org/wikipedia/en/c/c8/Marvelwolverine.jpg',
       publicationDate: new Date(1941, 12, 17),
       genre: 'Superhero',
-      excerpt: `Wolverine was born James Howlett in northern Alberta,
-           Canada, during the late 1880s, purportedly to rich farm owners John and Elizabeth Howlett,
-           though he is actually the illegitimate son of the Howletts
-          groundskeeper, Thomas Logan.[28] After Thomas is thrown off the
-          Howletts property for an attempted rape perpetrated by his other son,
-           named simply Dog, he returns to the Howlett manor and kills John Howlett.
-           In retaliation, young James kills Thomas with bone claws that emerge from the back of his hands,
-           as his mutation manifests.[29] He flees with his childhood companion, Rose, and grows into manhood on a mining
-           colony in the Yukon, adopting the name "Logan".[30] When Logan accidentally kills Rose with his claws, he flees the
+      excerpt: `Wolverine was born James Howlett in northern Alberta, Canada, during the late 1880s, purportedly to rich farm owners John and Elizabeth Howlett, though he is actually the illegitimate son of the Howletts groundskeeper, Thomas Logan.[28] After Thomas is thrown off the Howletts property for an attempted rape perpetrated by his other son, named simply Dog, he returns to the Howlett manor and kills John Howlett. In retaliation, young James kills Thomas with bone claws that emerge from the back of his hands, as his mutation manifests.[29] He flees with his childhood companion, Rose, and grows into manhood on a mining colony in the Yukon, adopting the name "Logan".[30] When Logan accidentally kills Rose with his claws, he flees the
           colony and lives in the wilderness among wolves,[31] until he is captured and placed in a circus.[32] Saul Creed,
            brother of Victor Creed, frees Logan, but after he betrays Logan and Clara Creed to Nathaniel Essex, Logan drowns
           Creed in Essex's potion.[33] Logan returns to civilization, residing with the Blackfoot people.
